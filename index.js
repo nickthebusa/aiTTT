@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gameSquares.forEach((square, index) => {
     square.addEventListener("click", () => {
-      
       // determine row
       const row = Math.floor(index / 3);
       // determine column

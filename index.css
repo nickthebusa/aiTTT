@@ -10,6 +10,7 @@ font-family: "Jersey 10", serif;
 
 body {
   color: white;
+  background: rgb(15,9,37);
   background: radial-gradient(circle, rgba(15,9,37,1) 0%, rgba(3,1,14,1) 100%);
   display: flex;
   flex-direction: column;
@@ -98,7 +99,7 @@ h1 {
     --square-font-size: 5rem;
   }
   h1 {
-    font-size: 1rem;
+    font-size: 0.5rem;
   }
 }
 @media (max-width: 375px) {
@@ -106,8 +107,5 @@ h1 {
     --square-width: 70px;
     --square-height: 70px;
     --square-font-size: 4rem;
-  }
-  h1 {
-    font-size: 0.7rem;
   }
 }
