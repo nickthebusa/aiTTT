@@ -92,6 +92,29 @@ h1 {
   cursor: pointer;
 }
 
+.records {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.records div {
+  margin: 0 1rem;
+}
+.records h4, .records p {
+  letter-spacing: 3px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.records h4 {
+  font-size: 2rem;
+}
+.records p {
+  font-size: 2.7rem;
+}
+
 @media (max-width: 500px) {
   :root {
     --square-width: 100px;
@@ -107,5 +130,14 @@ h1 {
     --square-width: 70px;
     --square-height: 70px;
     --square-font-size: 4rem;
+  }
+  .records div {
+    margin: 0 0.5rem;
+  }
+  .records h4 {
+    font-size: 1.5rem;
+  }
+  .records p {
+    font-size: 2rem;
   }
 }

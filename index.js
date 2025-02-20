@@ -7,6 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const playingScreen = document.querySelector('.playing');
   const resetBtn = document.querySelector('.reset');
 
+  const winsDiv = document.querySelector('.wins p');
+  const drawsDiv = document.querySelector('.draws p');
+  const lossesDiv = document.querySelector('.losses p');
+
+  // get localStorage wins and losses numbers
+  let wins = parseInt(localStorage.getItem('wins')) || 0;
+  let draws = parseInt(localStorage.getItem('draws')) || 0;
+  let losses = parseInt(localStorage.getItem('losses')) || 0;
+
+  updateStats();
+
   let playerChar;
   let computerChar;
   let gameBegin = false;
@@ -85,14 +96,21 @@ document.addEventListener("DOMContentLoaded", () => {
       if (winner(gameBoardArr)) {
         if (winner(gameBoardArr)[0] === playerChar) {
           playingScreen.textContent = "You Win!";
+          wins++;
+          localStorage.setItem('wins', wins);
         } else if (winner(gameBoardArr)[0] === computerChar) {
           playingScreen.textContent = "Computer Wins!";
+          losses++;
+          localStorage.setItem('losses', losses);
           highlightWinningSquares(winner(gameBoardArr)[1]);
         }
       } else {
         playingScreen.textContent = "Draw!";
+        draws++;
+        localStorage.setItem('draws', draws);
       }
       resetBtn.style.display = "block";
+      updateStats();
       return true;
     }
     return false;
@@ -120,9 +138,13 @@ document.addEventListener("DOMContentLoaded", () => {
     resetBtn.style.display = "none";
   }
 
+  function updateStats() {
+    winsDiv.textContent = wins;
+    drawsDiv.textContent = draws;
+    lossesDiv.textContent = losses;
+  }
+
 })
-
-
 
 
 // TIC TAC TOE
